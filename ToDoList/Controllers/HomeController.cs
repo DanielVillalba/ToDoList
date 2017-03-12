@@ -21,7 +21,24 @@ namespace ToDoList.Controllers
 
         public ActionResult Index()
         {
-            _db.Get();
+            // TEST DATA
+
+            var test = new TDList
+            {
+                ListId = 1,
+                Name = "Test list",
+                ToDoes = new List<ToDo>
+                {
+                    new ToDo
+                    {
+                        Id = 1,
+                        Description="Test Todo",
+                        IsDone = false,
+                    }
+                }
+            };
+            _db.Add(1, test);
+
             logger.Debug("Starting the Index action");
             return View();
         }

@@ -14,8 +14,5 @@ namespace ToDoList.Models
         public int Id { get; set; }
         public string Description { get; set; }
         public bool IsDone { get; set; }
-
-        public int ListId { get; set; }
-        public virtual TDList TDList { get; set; }
     }
 }
