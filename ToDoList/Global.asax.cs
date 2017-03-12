@@ -16,6 +16,9 @@ namespace ToDoList
             
             // enabling log4net
             log4net.Config.XmlConfigurator.Configure(new FileInfo(Server.MapPath("~/Web.config")));
+
+            // execute the RegisterComponents configuration
+            UnityConfig.RegisterComponents(); //Method call to Complete the Component Registration
         }
     }
 }

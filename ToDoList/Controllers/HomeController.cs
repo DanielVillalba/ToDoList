@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ToDoList.DataAccess.Repositories;
+using ToDoList.Models;
 
 namespace ToDoList.Controllers
 {
@@ -10,8 +12,16 @@ namespace ToDoList.Controllers
     {
         readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
+        private IRepository<TDList, int> _db;
+
+        public HomeController(IRepository<TDList, int> db)
+        {
+            _db = db;
+        }
+
         public ActionResult Index()
         {
+            _db.Get();
             logger.Debug("Starting the Index action");
             return View();
         }
