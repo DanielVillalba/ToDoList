@@ -163,6 +163,8 @@
     <Compile Include="Context\ToDoContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TDListController.cs" />
+    <Compile Include="DataAccess\Repositories\IRepository.cs" />
+    <Compile Include="DataAccess\Repositories\TDListRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
