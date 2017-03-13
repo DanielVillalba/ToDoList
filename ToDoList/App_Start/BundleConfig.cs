@@ -12,6 +12,7 @@ namespace ToDoList
                         "~/Scripts/angular.js",
                         "~/Scripts/angular-route.js",
                         "~/Scripts/ApplicationScripts/app.js",
+                        "~/Scripts/ApplicationScripts/delete-controller.js",
                         "~/Scripts/ApplicationScripts/index-controller.js",
                         "~/Scripts/ApplicationScripts/routing.js",
                         "~/Scripts/ApplicationScripts/services.js"));

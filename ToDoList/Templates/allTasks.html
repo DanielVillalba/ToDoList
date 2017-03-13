@@ -15,8 +15,8 @@
                 <td>{{task.Description}}</td>
                 <td>{{task.IsDone}}</td>
                 <td>
-                    <a href="#!/updateProduct" ng-click="edit(prod.Id, prod.Name, prod.Description, prod.AgeRestriction, prod.Company, prod.Price)">Edit</a>
-                    <a href="#!/deleteProduct" ng-click="delete(prod.Id, prod.Name, prod.Description, prod.AgeRestriction, prod.Company, prod.Price)">Delete</a>
+                    <a href="#!/updateProduct" ng-click="edit(task.ListId, task.Name, task.Description, task.IsDone)">Edit</a>
+                    <a href="#!/deleteTask" ng-click="delete(task.ListId, task.Name, task.Description, task.IsDone)">Delete</a>
                 </td>
             </tr>
         </tbody>

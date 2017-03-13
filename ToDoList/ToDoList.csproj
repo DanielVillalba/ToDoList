@@ -260,6 +260,7 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\ApplicationScripts\app.js" />
+    <Content Include="Scripts\ApplicationScripts\delete-controller.js" />
     <Content Include="Scripts\ApplicationScripts\index-controller.js" />
     <Content Include="Scripts\ApplicationScripts\routing.js" />
     <Content Include="Scripts\ApplicationScripts\services.js" />
@@ -1032,6 +1033,7 @@
     <Content Include="Scripts\ui-bootstrap-tpls-0.4.0.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Templates\allTasks.html" />
+    <Content Include="Templates\deleteTask.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

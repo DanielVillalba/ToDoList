@@ -131,5 +131,12 @@ namespace ToDoList.Controllers
             _db.Remove(tDList);
             return RedirectToAction("Index");
         }
+
+        public JsonResult deleteTask(int id)
+        {
+            TDList tDList = _db.Get(id);
+            _db.Remove(tDList);
+            return Json(tDList, JsonRequestBehavior.AllowGet);
+        }
     }
 }

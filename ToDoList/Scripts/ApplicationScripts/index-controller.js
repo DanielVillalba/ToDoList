@@ -15,41 +15,26 @@ mainApp.controller('IndexController', function ($scope, APIService, ShareService
     }
 
 
-    $scope.edit = function (id, name, desc, age, com, price) {
-        //console.log("Edit " + id);
-        //console.log("Edit " + name);
-        //console.log("Edit " + desc);
-        //console.log("Edit " + age);
-        //console.log("Edit " + com);
-        //console.log("Edit " + price);
-        var productToEdit =
+    $scope.edit = function (listId, name, description, isDone) {
+        var taskToEdit =
         {
-            Id: id,
+            ListId: listId,
             Name: name,
-            Description: desc,
-            AgeRestriction: age,
-            Company: com,
-            Price: price
+            Description: description,
+            IsDone: isDone,
         }
-        ShareService.storeProductToShare(productToEdit);
+        ShareService.storeTaskToShare(taskToEdit);
     }
-    $scope.delete = function (id, name, desc, age, com, price) {
-        //console.log("Delete " + id);
-        //console.log("Delete " + name);
-        //console.log("Delete " + desc);
-        //console.log("Delete " + age);
-        //console.log("Delete " + com);
-        //console.log("Delete " + price);
-        var productToEdit =
+    $scope.delete = function (listId, name, description, isDone) {
+
+        var taskToDelete =
         {
-            Id: id,
+            ListId: listId,
             Name: name,
-            Description: desc,
-            AgeRestriction: age,
-            Company: com,
-            Price: price
+            Description: description,
+            IsDone: isDone,
         }
-        ShareService.storeProductToShare(productToEdit);
+        ShareService.storeTaskToShare(taskToDelete);
     }
 
 });

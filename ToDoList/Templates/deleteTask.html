@@ -1,0 +1,48 @@
+﻿<!-- provides the view to delete a product-->
+
+<div class="container" ng-controller="DeleteController">
+
+    <br />
+    <br />
+
+    <h5 class="display-1"> {{areUSure}} </h5>
+    <br />
+
+
+    <form name="newProductForm" class="form-group">
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Id</label>
+            <div class="col-10">
+                <label class="form-control">{{task.ListId}}</label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Name</label>
+            <div class="col-10">
+                <label class="form-control">{{task.Name}}</label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Description</label>
+            <div class="col-10">
+                <label class="form-control">{{task.Description}}</label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Done</label>
+            <div class="col-10">
+                <label class="form-control">{{task.IsDone}}</label>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <a class="btn btn-primary btn-lg" href="#!/" ng-click='delete()'>Confirm Delete</a>
+        </div>
+
+    </form>
+
+</div>

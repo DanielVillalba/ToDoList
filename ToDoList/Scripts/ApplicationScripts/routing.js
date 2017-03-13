@@ -3,7 +3,7 @@
 mainApp.config(function ($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl: "/Templates/AllTasks.html",
+        templateUrl: "/Templates/allTasks.html",
         controller: "IndexController"
     })
     //.when("/newTest", {
@@ -13,10 +13,10 @@ mainApp.config(function ($routeProvider) {
     //.when("/updateProduct", {
     //    templateUrl: "/Templates/UpdateProduct.html"
     //})
-    //.when("/deleteProduct", {
-    //    templateUrl: "/Templates/DeleteProduct.html",
-    //    controller: "DeleteController"
-    //});
+    .when("/deleteTask", {
+        templateUrl: "/Templates/deleteTask.html",
+        controller: "DeleteController"
+    });
 
 
 });
