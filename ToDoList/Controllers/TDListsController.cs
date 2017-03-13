@@ -52,5 +52,18 @@ namespace ToDoList.Controllers
                 _db.Remove(tDList);
                 return "Employee Deleted";
         }
+
+        public string updateTask(TDList task)
+        {
+            if (task != null)
+            {
+                _db.Update(task);
+                return "Employee Updated";
+            }
+            else
+            {
+                return "Invalid Employee";
+            }
+        }
     }
 }

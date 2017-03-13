@@ -25,6 +25,16 @@ app.service('APIService', function ($http) {
         return response;
     }
 
+    this.updateTask = function (taskData) {
+        var response = $http({
+            method: "post",
+            url: "TDLists/updateTask",
+            data: JSON.stringify(taskData),
+            dataType: "json"
+        });
+        return response;
+    }
+
 });
 
 // service used to share a product object among diff controllers, basically to update or delete ops

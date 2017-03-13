@@ -265,6 +265,7 @@
     <Content Include="Scripts\ApplicationScripts\new-controller.js" />
     <Content Include="Scripts\ApplicationScripts\routing.js" />
     <Content Include="Scripts\ApplicationScripts\services.js" />
+    <Content Include="Scripts\ApplicationScripts\update-controller.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -1036,6 +1037,7 @@
     <Content Include="Templates\allTasks.html" />
     <Content Include="Templates\deleteTask.html" />
     <Content Include="Templates\newTask.html" />
+    <Content Include="Templates\updateTask.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

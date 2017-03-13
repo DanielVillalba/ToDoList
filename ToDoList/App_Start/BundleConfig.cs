@@ -15,6 +15,7 @@ namespace ToDoList
                         "~/Scripts/ApplicationScripts/delete-controller.js",
                         "~/Scripts/ApplicationScripts/index-controller.js",
                         "~/Scripts/ApplicationScripts/new-controller.js",
+                        "~/Scripts/ApplicationScripts/update-controller.js",
                         "~/Scripts/ApplicationScripts/routing.js",
                         "~/Scripts/ApplicationScripts/services.js"));
 
