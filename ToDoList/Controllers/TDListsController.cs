@@ -56,7 +56,7 @@ namespace ToDoList.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ListId,Name")] TDList tDList)
+        public ActionResult Create([Bind(Include = "ListId,Name,Description,IsDone")] TDList tDList)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace ToDoList.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ListId,Name")] TDList tDList)
+        public ActionResult Edit([Bind(Include = "ListId,Name,Description,IsDone")] TDList tDList)
         {
             if (ModelState.IsValid)
             {

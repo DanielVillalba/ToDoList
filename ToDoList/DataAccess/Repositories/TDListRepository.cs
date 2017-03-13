@@ -27,12 +27,12 @@ namespace ToDoList.DataAccess.Repositories
 
         public TDList Get(int id)
         {
-            return db.ToDoLists.Include("ToDoes").Single(x => x.ListId == id);
+            return db.ToDoLists.Single(x => x.ListId == id);
         }
 
         public void Remove(TDList entity)
         {
-            var deleteList = db.ToDoLists.Include("ToDoes").Single(x => x.ListId == entity.ListId);
+            var deleteList = db.ToDoLists.Single(x => x.ListId == entity.ListId);
             db.ToDoLists.Remove(deleteList);
             db.SaveChanges();
         }
@@ -40,7 +40,7 @@ namespace ToDoList.DataAccess.Repositories
         public void Update(TDList entity)
         {
             // TODO: create the logic to update DB based
-            var deleteList = db.ToDoLists.Include("ToDoes").Single(x => x.ListId == entity.ListId);
+            var deleteList = db.ToDoLists.Single(x => x.ListId == entity.ListId);
             db.ToDoLists.Remove(deleteList);
 
             db.ToDoLists.Add(entity);

@@ -13,7 +13,7 @@ namespace ToDoList.Models
         [Key]
         public int ListId { get; set; }
         public string Name { get; set; }
-
-        public virtual List<ToDo> ToDoes { get; set; }
+        public string Description { get; set; }
+        public bool IsDone { get; set; }
     }
 }

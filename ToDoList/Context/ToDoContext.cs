@@ -10,6 +10,5 @@ namespace ToDoList.Context
     public class ToDoContext : DbContext
     {
         public DbSet<TDList> ToDoLists { get; set; }
-        public DbSet<ToDo> ToDos { get; set; }
     }
 }
