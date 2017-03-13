@@ -15,8 +15,6 @@ namespace ToDoList.Controllers
 {
     public class TDListsController : Controller
     {
-        private ToDoContext db = new ToDoContext();
-
         private IRepository<TDList, int> _db;
 
         public TDListsController(IRepository<TDList, int> db)
@@ -76,7 +74,7 @@ namespace ToDoList.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TDList tDList = await db.ToDoLists.FindAsync(id);
+            TDList tDList = _db.Get(id ?? 0);
             if (tDList == null)
             {
                 return HttpNotFound();
@@ -89,25 +87,24 @@ namespace ToDoList.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ListId,Name")] TDList tDList)
+        public ActionResult Edit([Bind(Include = "ListId,Name")] TDList tDList)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tDList).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                _db.Update(tDList);
                 return RedirectToAction("Index");
             }
             return View(tDList);
         }
 
         // GET: TDLists/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TDList tDList = await db.ToDoLists.FindAsync(id);
+            TDList tDList = _db.Get(id ?? 0);
             if (tDList == null)
             {
                 return HttpNotFound();
@@ -120,22 +117,13 @@ namespace ToDoList.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TDList tDList = db.ToDoLists.Find(id);
+            TDList tDList = _db.Get(id);
             if (tDList == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             _db.Remove(tDList);
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }
