@@ -40,7 +40,12 @@ namespace ToDoList.DataAccess.Repositories
         public void Update(TDList entity)
         {
             // TODO: create the logic to update DB based
-            throw new NotImplementedException();
+            var deleteList = db.ToDoLists.Include("ToDoes").Single(x => x.ListId == entity.ListId);
+            db.ToDoLists.Remove(deleteList);
+
+            db.ToDoLists.Add(entity);
+
+            db.SaveChanges();
         }
     }
 }
