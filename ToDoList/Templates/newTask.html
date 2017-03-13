@@ -1,0 +1,36 @@
+﻿<!-- provides the view to add a new task-->
+
+<div class="container" ng-controller="NewController">
+
+    <br />
+    <br />
+
+    <h5 class="display-1"> {{newTask}} </h5>
+    <br />
+
+
+    <form name="newTaskForm" class="form-group">
+
+        <div class="form-group row">
+            <label for="example-text-input" class="col-2 col-form-label">Name</label>
+            <div class="col-10">
+                <input name="newName" class="form-control" type="text" ng-model="Name" ng-maxlength="50" required>
+                <span ng-show="newTaskForm.newName.$touched && newTaskForm.newName.$invalid">Product's name is required and max length should be 50 chars</span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="example-text-input" class="col-2 col-form-label">Description</label>
+            <div class="col-10">
+                <input name="newDescription" class="form-control" type="text" ng-model="Description" ng-maxlength="100">
+                <span ng-show="newTaskForm.newDescription.$touched && newTaskForm.newDescription.$invalid">Product's description max length should be 100 chars</span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <a class="btn btn-primary btn-lg" href="#!/" ng-click='saveTask()'>Save Data</a>
+        </div>
+
+    </form>
+
+</div>

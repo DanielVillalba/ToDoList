@@ -5,26 +5,18 @@ app.service('APIService', function ($http) {
         return $http.get("/TDLists/getAllTasks")
     }
 
-    //this.newProduct = function (newData) {
-    //    $http({
-    //        url: "../api/ProductsAPI",
-    //        dataType: 'json',
-    //        method: 'POST',
-    //        data: newData,
-    //        headers: {
-    //            "Content-Type": "application/json"
-    //        }
-    //    })
-    //    .then(function (data) {
-    //        console.log(data);
-    //    }, function (error) {
-    //        console.log('something went wrong !');
-    //    })
-    //}
+    this.addTask = function (task) {
+        var response = $http({
+            method: "post",
+            url: "TDLists/AddTask",
+            data: JSON.stringify(task),
+            dataType: "json"
+        });
+        return response;
+    }
 
 
     this.deleteTask = function (taskData) {
-        console.log('----------------> ' + taskData);
         $http({
             url: "/TDLists/deleteTask/" + taskData,
             dataType: 'json',

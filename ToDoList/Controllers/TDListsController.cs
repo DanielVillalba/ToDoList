@@ -73,6 +73,19 @@ namespace ToDoList.Controllers
             return View(tDList);
         }
 
+        public string AddTask(TDList task)
+        {
+            if (task != null)
+            {
+                _db.Add(task.ListId, task);
+                return "Task Added";
+            }
+            else
+            {
+                return "Invalid Task";
+            }
+        }
+
         // GET: TDLists/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {

@@ -262,6 +262,7 @@
     <Content Include="Scripts\ApplicationScripts\app.js" />
     <Content Include="Scripts\ApplicationScripts\delete-controller.js" />
     <Content Include="Scripts\ApplicationScripts\index-controller.js" />
+    <Content Include="Scripts\ApplicationScripts\new-controller.js" />
     <Content Include="Scripts\ApplicationScripts\routing.js" />
     <Content Include="Scripts\ApplicationScripts\services.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1034,6 +1035,7 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="Templates\allTasks.html" />
     <Content Include="Templates\deleteTask.html" />
+    <Content Include="Templates\newTask.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

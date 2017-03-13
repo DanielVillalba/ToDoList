@@ -6,10 +6,10 @@ mainApp.config(function ($routeProvider) {
         templateUrl: "/Templates/allTasks.html",
         controller: "IndexController"
     })
-    //.when("/newTest", {
-    //    templateUrl: "/Templates/AddNewProduct.html",
-    //    controller: "NewController"
-    //})
+    .when("/newTask", {
+        templateUrl: "/Templates/newTask.html",
+        controller: "NewController"
+    })
     //.when("/updateProduct", {
     //    templateUrl: "/Templates/UpdateProduct.html"
     //})
