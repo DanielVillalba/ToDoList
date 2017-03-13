@@ -183,6 +183,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Context\ToDoContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TDListsController.cs" />
     <Compile Include="DataAccess\Repositories\IRepository.cs" />
     <Compile Include="DataAccess\Repositories\TDListRepository.cs" />
     <Compile Include="Global.asax.cs">
@@ -195,6 +196,10 @@
     <Compile Include="Migrations\201703122013517_Updating the ToDo model.cs" />
     <Compile Include="Migrations\201703122013517_Updating the ToDo model.Designer.cs">
       <DependentUpon>201703122013517_Updating the ToDo model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703130146027_going back to the ID relation.cs" />
+    <Compile Include="Migrations\201703130146027_going back to the ID relation.Designer.cs">
+      <DependentUpon>201703130146027_going back to the ID relation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ToDo.cs" />
@@ -239,6 +244,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\TDLists\Create.cshtml" />
+    <Content Include="Views\TDLists\Delete.cshtml" />
+    <Content Include="Views\TDLists\Details.cshtml" />
+    <Content Include="Views\TDLists\Edit.cshtml" />
+    <Content Include="Views\TDLists\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -257,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703122013517_Updating the ToDo model.resx">
       <DependentUpon>201703122013517_Updating the ToDo model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703130146027_going back to the ID relation.resx">
+      <DependentUpon>201703130146027_going back to the ID relation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

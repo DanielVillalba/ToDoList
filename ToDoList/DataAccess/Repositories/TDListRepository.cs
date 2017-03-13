@@ -18,26 +18,28 @@ namespace ToDoList.DataAccess.Repositories
         {
             db.ToDoLists.Add(entity);
             db.SaveChanges();
-            
         }
 
         public IEnumerable<TDList> Get()
         {
-            throw new NotImplementedException();
+            return db.ToDoLists.ToList();
         }
 
         public TDList Get(int id)
         {
-            throw new NotImplementedException();
+            return db.ToDoLists.Include("ToDoes").Single(x => x.ListId == id);
         }
 
         public void Remove(TDList entity)
         {
-            throw new NotImplementedException();
+            var deleteList = db.ToDoLists.Include("ToDoes").Single(x => x.ListId == entity.ListId);
+            db.ToDoLists.Remove(deleteList);
+            db.SaveChanges();
         }
 
         public void Update(TDList entity)
         {
+            // TODO: create the logic to update DB based
             throw new NotImplementedException();
         }
     }
