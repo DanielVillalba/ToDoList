@@ -22,10 +22,8 @@ namespace ToDoList.Controllers
             _db = db;
         }
 
-        // GET: TDLists
         public ActionResult Index()
         {
-            IEnumerable<TDList> allLists = _db.Get();
             return View();
         }
 
@@ -35,45 +33,7 @@ namespace ToDoList.Controllers
             return Json(allTasks, JsonRequestBehavior.AllowGet);
         }
 
-        // GET: TDLists/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            
-            TDList tDList = _db.Get(id ?? 0);
-            if (tDList == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tDList);
-        }
-
-        // GET: TDLists/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: TDLists/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ListId,Name,Description,IsDone")] TDList tDList)
-        {
-            if (ModelState.IsValid)
-            {
-                _db.Add(tDList.ListId, tDList);
-                return RedirectToAction("Index");
-            }
-
-            return View(tDList);
-        }
-
-        public string AddTask(TDList task)
+        public string addTask(TDList task)
         {
             if (task != null)
             {
@@ -86,70 +46,11 @@ namespace ToDoList.Controllers
             }
         }
 
-        // GET: TDLists/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public string deleteTask(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            TDList tDList = _db.Get(id ?? 0);
-            if (tDList == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tDList);
-        }
-
-        // POST: TDLists/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ListId,Name,Description,IsDone")] TDList tDList)
-        {
-            if (ModelState.IsValid)
-            {
-                _db.Update(tDList);
-                return RedirectToAction("Index");
-            }
-            return View(tDList);
-        }
-
-        // GET: TDLists/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            TDList tDList = _db.Get(id ?? 0);
-            if (tDList == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tDList);
-        }
-
-        // POST: TDLists/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            TDList tDList = _db.Get(id);
-            if (tDList == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            _db.Remove(tDList);
-            return RedirectToAction("Index");
-        }
-
-        public JsonResult deleteTask(int id)
-        {
-            TDList tDList = _db.Get(id);
-            _db.Remove(tDList);
-            return Json(tDList, JsonRequestBehavior.AllowGet);
+                TDList tDList = _db.Get(id);
+                _db.Remove(tDList);
+                return "Employee Deleted";
         }
     }
 }
