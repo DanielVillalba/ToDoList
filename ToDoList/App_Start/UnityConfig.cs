@@ -3,6 +3,7 @@ using Microsoft.Practices.Unity;
 using Unity.Mvc5;
 using ToDoList.DataAccess.Repositories;
 using ToDoList.Models;
+using ToDoList.Utils;
 
 namespace ToDoList
 {
@@ -18,7 +19,7 @@ namespace ToDoList
             // e.g. container.RegisterType<ITestService, TestService>();
 
             container.RegisterType<IRepository<TDList, int>, TDListRepository>();
-            
+            container.RegisterType<ILogger, Logger>();
             
             DependencyResolver.SetResolver(new Unity.Mvc5.UnityDependencyResolver(container));
         }

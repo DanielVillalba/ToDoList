@@ -5,24 +5,25 @@ using System.Web;
 using System.Web.Mvc;
 using ToDoList.DataAccess.Repositories;
 using ToDoList.Models;
+using ToDoList.Utils;
 
 namespace ToDoList.Controllers
 {
     public class HomeController : Controller
     {
-        readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
         private IRepository<TDList, int> _db;
+        private ILogger _logger;
 
-        public HomeController(IRepository<TDList, int> db)
+        public HomeController(IRepository<TDList, int> db, ILogger logger)
         {
             _db = db;
+            _logger = logger;
         }
 
         public ActionResult Index()
         {
             // TEST DATA
-
+            _logger.Log("*********************************************");
             var test = new TDList
             {
                 ListId = 1,
@@ -39,7 +40,6 @@ namespace ToDoList.Controllers
             };
             _db.Add(1, test);
 
-            logger.Debug("Starting the Index action");
             return View();
         }
 
