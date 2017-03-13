@@ -260,6 +260,9 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\ApplicationScripts\app.js" />
+    <Content Include="Scripts\ApplicationScripts\index-controller.js" />
+    <Content Include="Scripts\ApplicationScripts\routing.js" />
+    <Content Include="Scripts\ApplicationScripts\services.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -1028,6 +1031,7 @@
     <Content Include="Scripts\ui-bootstrap-tpls-0.4.0.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.4.0.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Templates\allTasks.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

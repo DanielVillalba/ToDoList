@@ -11,7 +11,10 @@ namespace ToDoList
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                         "~/Scripts/angular.js",
                         "~/Scripts/angular-route.js",
-                        "~/Scripts/ApplicationScripts/app.js"));
+                        "~/Scripts/ApplicationScripts/app.js",
+                        "~/Scripts/ApplicationScripts/index-controller.js",
+                        "~/Scripts/ApplicationScripts/routing.js",
+                        "~/Scripts/ApplicationScripts/services.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));

@@ -26,7 +26,13 @@ namespace ToDoList.Controllers
         public ActionResult Index()
         {
             IEnumerable<TDList> allLists = _db.Get();
-            return View(allLists);
+            return View();
+        }
+
+        public JsonResult getAllTasks()
+        {
+            IEnumerable<TDList> allTasks = _db.Get();
+            return Json(allTasks, JsonRequestBehavior.AllowGet);
         }
 
         // GET: TDLists/Details/5

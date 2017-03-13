@@ -1,0 +1,24 @@
+﻿    <!-- The first view loaded when the app starts, it displays all the task saved on the todo list-->
+
+<div class="container" ng-controller="IndexController">
+    <table class="table table-striped table-bordered table-hover table-condensed">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Is Done</th>
+        </tr>
+        <tbody data-ng-repeat="task in tasks">
+            <tr>
+                <td>{{task.ListId}}</td>
+                <td>{{task.Name}}</td>
+                <td>{{task.Description}}</td>
+                <td>{{task.IsDone}}</td>
+                <td>
+                    <a href="#!/updateProduct" ng-click="edit(prod.Id, prod.Name, prod.Description, prod.AgeRestriction, prod.Company, prod.Price)">Edit</a>
+                    <a href="#!/deleteProduct" ng-click="delete(prod.Id, prod.Name, prod.Description, prod.AgeRestriction, prod.Company, prod.Price)">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
