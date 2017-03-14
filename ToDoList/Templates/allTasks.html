@@ -13,7 +13,7 @@
                 <td>{{task.ListId}}</td>
                 <td>{{task.Name}}</td>
                 <td>{{task.Description}}</td>
-                <td>{{task.IsDone}}</td>
+                <td><input type="checkbox" ng-model="task.IsDone" ng-change="onComplete(task)"></td>
                 <td>
                     <a href="#!/updateTask" ng-click="edit(task.ListId, task.Name, task.Description, task.IsDone)">Edit</a>
                     <a href="#!/deleteTask" ng-click="delete(task.ListId, task.Name, task.Description, task.IsDone)">Delete</a>

@@ -1,6 +1,6 @@
 ﻿var mainApp = angular.module('TodoList');
 
-mainApp.controller('IndexController', function ($scope, APIService, ShareService) {
+mainApp.controller('IndexController', function ($scope, $location, APIService, ShareService) {
     $scope.greeting = 'Hola!';
     getTasks();
 
@@ -37,5 +37,18 @@ mainApp.controller('IndexController', function ($scope, APIService, ShareService
         ShareService.storeTaskToShare(taskToDelete);
     }
 
+    $scope.onComplete = function (task) {
+
+        var newValue = task.IsDone; //toggle value
+        console.log("onCompleteTodo -done: " + newValue + " : " + task.Name);
+
+        var serviceCall = APIService.updateTask(task);
+        serviceCall.then(function (data) {
+            console.log('navigating to index after update task state ...');
+            return $location.path('/');
+        }, function (error) {
+            console.log('something went wrong !');
+        });
+    }
 });
 
