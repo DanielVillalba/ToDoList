@@ -13,9 +13,14 @@ namespace ToDoList.Utils
     {
         private ILog log4net_logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        public void Log(string data)
+        /// <summary>
+        /// Provides a general interface to log information to a file.
+        /// </summary>
+        /// <param name="rootObjec">Name of the object performing the log</param>
+        /// <param name="data">Information that needs to be logged</param>
+        public void Log(string rootObjec, string data)
         {
-            log4net_logger.Debug(data);
+            log4net_logger.Debug("Origin: " + rootObjec + " --> " + data);
         }
     }
 }

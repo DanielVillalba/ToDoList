@@ -11,6 +11,6 @@ namespace ToDoList.Utils
     /// </summary>
     public interface ILogger
     {
-        void Log(string data);
+        void Log(string rootObject, string data);
     }
 }
