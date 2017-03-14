@@ -1,6 +1,6 @@
 ﻿var mainApp = angular.module('TodoList');
 
-mainApp.controller('NewController', function ($scope, APIService) {
+mainApp.controller('NewController', function ($scope, $location, APIService) {
     $scope.newTask = 'Enter new task data!';
 
     $scope.ListId;
@@ -14,5 +14,11 @@ mainApp.controller('NewController', function ($scope, APIService) {
         newTask.Description = $scope.Description;
         newTask.IsDone = false;
         var serviceCall = APIService.addTask(newTask);
+        serviceCall.then(function (data) {
+            console.log('navigating to index after add task...');
+            return $location.path('/');
+        }, function (error) {
+            console.log('something went wrong !');
+        });
     }
 });
