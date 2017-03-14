@@ -39,13 +39,13 @@ namespace ToDoList.DataAccess.Repositories
 
         public void Update(TDList entity)
         {
-            // TODO: create the logic to update DB based
-            var deleteList = db.ToDoLists.Single(x => x.ListId == entity.ListId);
-            db.ToDoLists.Remove(deleteList);
+            TDList original = db.ToDoLists.Find(entity.ListId);
 
-            db.ToDoLists.Add(entity);
-
-            db.SaveChanges();
+            if (original != null)
+            {
+                db.Entry(original).CurrentValues.SetValues(entity);
+                db.SaveChanges();
+            }
         }
     }
 }
