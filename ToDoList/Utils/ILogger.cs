@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ToDoList.Utils
 {
+    /// <summary>
+    /// Interface to be injected to the classes that requires logging functionality
+    /// </summary>
     public interface ILogger
     {
         void Log(string data);

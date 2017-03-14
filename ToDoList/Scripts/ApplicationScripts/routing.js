@@ -11,7 +11,8 @@ mainApp.config(function ($routeProvider) {
         controller: "NewController"
     })
     .when("/updateTask", {
-        templateUrl: "/Templates/updateTask.html"
+        templateUrl: "/Templates/updateTask.html",
+        controller: "UpdateController"
     })
     .when("/deleteTask", {
         templateUrl: "/Templates/deleteTask.html",

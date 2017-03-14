@@ -1,11 +1,9 @@
 ﻿var mainApp = angular.module('TodoList');
 
 mainApp.controller('IndexController', function ($scope, $location, APIService, ShareService) {
-    $scope.greeting = 'Hola!';
     getTasks();
 
     function getTasks() {
-        console.log('requesting data');
         var serviceCall = APIService.getTasks();
         serviceCall.then(function (data) {
             $scope.tasks = angular.fromJson(data.data);

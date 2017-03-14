@@ -6,6 +6,9 @@ using log4net;
 
 namespace ToDoList.Utils
 {
+    /// <summary>
+    /// Implementation to be injected on the classes that requires logging functionality
+    /// </summary>
     public class Logger : ILogger
     {
         private ILog log4net_logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);

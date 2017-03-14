@@ -15,11 +15,14 @@
                 <td>{{task.Description}}</td>
                 <td><input type="checkbox" ng-model="task.IsDone" ng-change="onComplete(task)"></td>
                 <td>
-                    <a href="#!/updateTask" ng-click="edit(task.ListId, task.Name, task.Description, task.IsDone)">Edit</a>
-                    <a href="#!/deleteTask" ng-click="delete(task.ListId, task.Name, task.Description, task.IsDone)">Delete</a>
+                    <div class="btn-group">
+                        <a class="btn btn-success" href="#!/updateTask" ng-click="edit(task.ListId, task.Name, task.Description, task.IsDone)">Edit</a>
+                        <a class="btn btn-danger" href="#!/deleteTask" ng-click="delete(task.ListId, task.Name, task.Description, task.IsDone)">Delete</a>
+                    </div>
                 </td>
             </tr>
         </tbody>
     </table>
-    <a href="#!/newTask">Add new task</a>
+
+    <a class="btn btn-primary btn-lg" href="#!/newTask">Add new task</a>
 </div>

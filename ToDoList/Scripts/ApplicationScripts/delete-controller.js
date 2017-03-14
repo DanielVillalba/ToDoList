@@ -1,7 +1,7 @@
 ﻿var mainApp = angular.module('TodoList');
 
 mainApp.controller('DeleteController', function ($scope, $location, APIService, ShareService) {
-    $scope.areUSure = 'Are you sure you want to delete this product?';
+    $scope.areUSure = 'Are you sure you want to delete this task?';
 
     var task = ShareService.getStoredTaskFromShare();
     $scope.task = task;
